@@ -4,9 +4,14 @@ import random
 
 def place_ship(board):
     ship_row = random.randint(0, 5)
-    ship_col = random.randint(0, 5)
-    board[ship_row][ship_col] = 'S'
+    ship_column = random.randint(0, 5)
+    board[ship_row][ship_column] = 'S'
 
 def print_board(board):
     for row in board:
         print(' '.join(row))
+
+def get_user_guess():
+    guess_row = int(input("Guess Row: "))
+    guess_column = int(input("Guess Column: "))
+    return guess_row, guess_col
