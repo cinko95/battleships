@@ -14,4 +14,9 @@ def print_board(board):
 def get_user_guess():
     guess_row = int(input("Guess Row: "))
     guess_column = int(input("Guess Column: "))
-    return guess_row, guess_col
+    return guess_row, guess_column
+
+def check_guess(board, guess_row, guess_column):
+    if board[guess_row][guess_column] == 'S':
+        return True
+    return False
