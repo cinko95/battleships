@@ -85,7 +85,7 @@ def main():
         else:
             print_board(computer_board)
 
-        print("\nComputer's Turn:")
+        print("Computer's Turn:")
         guess_row, guess_col = computer_make_guess(player_board)
         if check_guess(player_board, guess_row, guess_col):
             print("Computer's hit at row", guess_row, "and column", guess_col)
