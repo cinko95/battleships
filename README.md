@@ -1,32 +1,78 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome,
+# Battleships Game
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+## Deployment
 
-## Reminders
+### Heroku Deployment
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+1. Sign up for a Heroku account [here](https://www.heroku.com/).
+2. Install the Heroku CLI on your local machine.
+3. Open a terminal and log in to your Heroku account using the command: `heroku login`.
+4. Create a new Heroku app using the command: `heroku create`.
+5. Deploy your Battleships game to Heroku using: `git push heroku master`.
 
-## Creating the Heroku app
+### GitHub/Heroku Integration
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+1. Commit your changes to the local repository: `git commit -m "Your commit message"`.
+2. Push the changes to GitHub: `git push origin master`.
+3. Heroku will automatically pick up the changes from GitHub and deploy the updated version.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### Local Setup
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+1. Clone the repository: `git clone [<repository-url>](https://github.com/cinko95/battleships)`.
+2. Navigate to the project directory: `cd battleships`.
+3. Install dependencies: `pip install -r requirements.txt`.
+4. Run the game locally: `python3 run.py`.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+## Testing
 
-Connect your GitHub repository and deploy as normal.
+### Functionality
 
-## Constraints
+#### Test 1: Placing Ships
+- **Description:** Ensure that ships are placed randomly on the board.
+- **Expected Outcome:** Ships are placed without overlapping or going out of bounds.
+- **Result:** Passed
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+#### Test 2: User Guess
+- **Description:** Validate user input for row and column guesses.
+- **Expected Outcome:** Accept only valid numeric input within the range (0 to 4).
+- **Result:** Passed
 
----
+#### Test 3: Computer Guess
+- **Description:** Ensure the computer generates valid random guesses.
+- **Expected Outcome:** Computer guesses are within the board's range.
+- **Result:** Passed
+#### Test 4: Checking Guess
+- **Description:** Verify the correctness of hit or miss detection.
+- **Expected Outcome:** Correctly identify hits and misses on the board.
+- **Result:** Passed
+#### Test 5: Game Win
+- **Description:** Check if the game correctly identifies a winner.
+- **Expected Outcome:** Declare a winner when all ships are sunk.
+- **Result:** Passed
 
-Happy coding!
+
+### Reach
+
+#### Test 1: Browser Compatibility
+- **Description:** Test the game on different browsers (Chrome, Firefox, Safari).
+- **Expected Outcome:** Game functions correctly on all browsers.
+- **Result:** Passed
+
+#### Test 2: Responsiveness
+- **Description:** Test the game's responsiveness on different screen sizes.
+- **Expected Outcome:** Game elements adjust appropriately to different screen sizes.
+- **Result:** Passed
+
+## Technologies Used
+
+- Python
+
+## Credits
+
+### Content
+- Game logic inspired by https://en.wikipedia.org/wiki/Battleship_(game).
+
+### Acknowledgements
+
+- Special thanks to Brian for guidance.
