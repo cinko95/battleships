@@ -5,6 +5,7 @@ def generate_board():
     return [['O' for _ in range(5)] for _ in range(5)]
 
 def place_ships(board, num_ships):
+    """Randomly place ships on the board."""
     for _ in range(num_ships):
         ship_row = random.randint(0, 4)
         ship_col = random.randint(0, 4)
@@ -12,22 +13,22 @@ def place_ships(board, num_ships):
             ship_row = random.randint(0, 4)
             ship_col = random.randint(0, 4)
         board[ship_row][ship_col] = 'X'
-        print(f"Player's Ship {_ + 1} placed at row {ship_row} and column {ship_col}")
-
-def computer_place_ships(board, num_ships):
-    for _ in range(num_ships):
-        ship_row = random.randint(0, 4)
-        ship_col = random.randint(0, 4)
-        while board[ship_row][ship_col] == 'X':
-            ship_row = random.randint(0, 4)
-            ship_col = random.randint(0, 4)
-        board[ship_row][ship_col] = 'X'
-
+      
 def print_board(board):
-    for row in board:
-        print(' '.join(row))
+    print("\n")
+
+    print("   0 1 2 3 4")
+    print("   - - - - -")
+    for row_index, row in enumerate(board):
+        # 0 | X O O O O
+        # 1 | O O O O O
+        # 2 | O O O O O
+        print(str(row_index) + '| ' + ' '.join(row))
+
+    print("\n")
 
 def get_user_guess():
+    """Get and validate the user's guess."""
     while True:
         guess_row = input("Guess Row: \n").strip()
         guess_col = input("Guess Column: \n").strip()
@@ -45,11 +46,13 @@ def get_user_guess():
         return guess_row, guess_col
 
 def computer_make_guess(board):
+    """Generate a random guess for the computer."""
     guess_row = random.randint(0, 4)
     guess_col = random.randint(0, 4)
     return guess_row, guess_col
 
 def check_guess(board, guess_row, guess_col):
+    """Check if a guess hits or misses a ship on the board."""
     if board[guess_row][guess_col] == 'X':
         print("Congratulations! You hit a ship.")
         board[guess_row][guess_col] = 'H'  # Mark the hit on the board
@@ -59,6 +62,7 @@ def check_guess(board, guess_row, guess_col):
         return False
 
 def check_win(board):
+    """Check if the game is won by either player or the computer."""
     return all(cell != 'X' for row in board for cell in row)
 
 def main():
@@ -66,11 +70,10 @@ def main():
     player_board = generate_board()
     computer_board = generate_board()
     
-    print("Player's board:")
-    print_board(player_board)
+    
     place_ships(player_board, 5)  # Place 5 ships on the player's board
     
-    computer_place_ships(computer_board, 5)  # Place 5 ships on the computer's board
+    place_ships(computer_board, 5)  # Place 5 ships on the computer's board
 
     for turn in range(10):  # Allow the player and computer to make 10 guesses each
         print(f"Turn {turn + 1}")
