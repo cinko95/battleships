@@ -28,7 +28,7 @@
 ## Screenshot
 
 ![image](https://github.com/cinko95/battleships/assets/137789244/cb813f9a-7076-4b0a-95f6-512162e3cc0b)
-*Description: A screenshot of the Battleships game in action.*
+*Battleships game in action.*
 
 
 ## Testing
