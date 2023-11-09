@@ -24,6 +24,13 @@
 3. Install dependencies: `pip install -r requirements.txt`.
 4. Run the game locally: `python3 run.py`.
 
+
+## Screenshot
+
+![image](https://github.com/cinko95/battleships/assets/137789244/cb813f9a-7076-4b0a-95f6-512162e3cc0b)
+*Description: A screenshot of the Battleships game in action.*
+
+
 ## Testing
 
 ### Functionality
